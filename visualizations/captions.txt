@@ -1,0 +1,24 @@
+01_churn_by_preferred_channel.png
+Interpretation: In-Store customers had the highest churn rate (65.29%), while Online customers had the lowest (63.07%). Although the difference is modest, Meridian could investigate whether customer experiences vary across shopping channels. These results show an association and do not prove that the shopping channel causes churn.
+
+02_churn_by_membership_tier.png
+Interpretation: Gold customers recorded the highest churn rate at approximately 65.14%, while Platinum customers recorded the lowest at approximately 62.80%. The difference is relatively small, so Meridian should investigate other factors before deciding whether membership tier is an important driver of churn.
+
+03_churn_by_state.png
+Interpretation: Wisconsin recorded the highest customer churn rate (68.09%), while Washington recorded the lowest (60.07%), an 8.01-percentage-point difference. Meridian should investigate regional differences in customer experience and service delivery to understand this variation. The chart identifies a pattern but does not establish its cause.
+
+04_churn_by_referral_source.png
+Interpretation: Customers acquired through Friend Referral had the highest churn rate (66.43%), while those acquired through Influencer referrals had the lowest (59.93%). In addition, 1,559 customers had unknown referral sources, making accurate acquisition tracking an important improvement area for Meridian. These results show associations and do not prove that a referral source causes churn.
+
+07_interactive_churn_by_membership_tier.html
+Interpretation: This interactive chart compares churn rates across the four membership tiers. Gold customers have the highest churn rate (65.14%), while Platinum customers have the lowest (62.80%). Hovering over each bar reveals the total number of customers and the number who churned, allowing Meridian to explore the differences between tiers.
+
+08_interactive_churn_by_referral_source.html
+Interpretation: Customers acquired through Friend Referral had the highest churn rate (66.43%), while those acquired through Influencer referrals had the lowest (59.93%). The chart also reveals that 1,559 customers had unknown referral sources, highlighting the need for Meridian to improve its acquisition-data tracking.
+
+05_order_variables_correlation_heatmap.png
+Interpretation: The correlation heatmap shows the strength and direction of the relationships between shipping cost, discount percentage, and total order amount. These relationships can help Meridian understand patterns in its order data; however, correlation does not imply causation.
+
+06_monthly_revenue_trend.png
+Interpretation: The monthly revenue trend illustrates how revenue from completed orders changes over time. Peaks and declines can help Meridian identify periods of stronger or weaker sales and guide further investigation into seasonal patterns and customer purchasing behaviour.
+
