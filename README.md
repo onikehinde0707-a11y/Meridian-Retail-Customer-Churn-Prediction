@@ -1,120 +1,244 @@
-# Meridian-Retail-Customer-Churn-Prediction
-Reducing Customer Churn at Meridian Retail Group
-An End-to-End Data Science Investigation
+# Meridian Retail Group: Customer Churn Prediction
+
 1. Project Overview
-This project investigates customer churn at Meridian Retail Group, a retail business operating through online, mobile application and physical store channels.
-The aim is to understand why customers stop purchasing, identify patterns associated with churn, predict customers who may be at risk and recommend practical customer-retention strategies.
-2. Business Objectives
-The project aims to:
-Understand customer purchasing behaviour.
-Identify customer churn patterns.
-Examine customer segments and support-ticket information.
-Analyse sales and customer activity.
-Build machine-learning models to predict customer churn.
-Recommend strategies to improve customer retention.
-3. Dataset Description
-The project uses five main datasets:
-	●	Customers
-	●	Orders
-	●	Order Items
-	●	Products
-	●	Support Tickets
-The datasets contain customer information, transaction records, product details and customer-support interactions.
 
-4. Tools and Technologies
-The following tools and technologies were used:
-Python
-Pandas and NumPy
-Matplotlib and Plotly
-Scikit-learn
-SQL and SQLite
-Excel / Google Sheets
-Google Colab
-Flask API
-5. Project Workflow
-The investigation followed these stages:
-Business understanding and problem definition.
-Data understanding and inspection.
-Excel-based data analysis.
-SQL data validation and business analysis.
-Python programming and data manipulation.
-Data cleaning and preparation.
-Exploratory Data Analysis (EDA).
-Data visualisation.
-Machine-learning modelling and evaluation.
-Model saving and API development.
-6. Machine-Learning Approach
-The project explored several classification models:
-Logistic Regression
-Decision Tree
-Random Forest
-Gradient Boosting
-Multi-Layer Perceptron Neural Network
-Random Forest and Gradient Boosting were also tuned using GridSearchCV.
-The tuned Gradient Boosting model achieved the following reported test results:
-Metric
-Result
-Accuracy
-67.4%
-Precision
-65.8%
-Recall
-86.5%
-F1-score
-74.8%
-ROC-AUC
-70.9%
+This project investigates customer churn at Meridian Retail Group, a retail business operating across online, mobile application, and physical store channels.
 
-These results indicate moderate predictive performance, with relatively strong recall.
-7. Model and API Deliverables
-The project includes:
-Meridian final churn model.pkl – saved machine-learning model.
-Meridian churn API.py – API application.
-Meridian API Test Evidence.json – API testing evidence.
-API tests demonstrated successful predictions for valid inputs and appropriate error responses for missing or invalid inputs.
-The API was tested but has not been confirmed as a live production deployment.
-8. Key Business Recommendations
-Based on the investigation, Meridian Retail Group should:
-	●	Identify customers showing signs of reduced purchasing activity.
-	●	Introduce targeted retention campaigns.
-	●	Improve customer-support response and resolution.
-	●	Monitor customer purchasing frequency and recency.
-	●	Develop personalised offers for customers at risk of churn.
-	●	Regularly evaluate and update the churn prediction model.
+The aim is to understand customer purchasing behaviour, identify customers who may stop purchasing, and develop a machine-learning solution that can support customer-retention strategies.
 
-9. Limitations
-The project has some limitations:
-Some customer and transaction information contains missing values.
-Different project stages use different churn definitions and observation periods.
-The predictive model has moderate performance and requires further validation.
-Predictions may contain false positives and false negatives.
-The model should support human decision-making rather than replace it.
-10. Project Structure
-The project is organised into the following folders:
-Kehinde Oni's Capstone Project/
+The project applies data analysis, SQL, data visualisation and machine learning to investigate customer churn and provide practical business recommendations.
+
+2. Project Objectives
+
+The main objectives are to:
+
+* Investigate customer purchasing behaviour and churn patterns.
+* Identify factors associated with customer churn.
+* Develop machine-learning models to predict customer churn.
+* Compare model performance and identify a suitable model.
+* Provide churn predictions and probability scores through a Flask API.
+* Recommend strategies to improve customer retention.
+
+3. Dataset Description and Preparation
+
+The project uses five synthetic datasets:
+
+* Customers
+* Orders
+* Order Items
+* Products
+* Customer Support Tickets
+
+The supplied capstone data is synthetic and does not represent real customers or transactions.
+
+Data preparation activities included:
+
+* Investigating missing values.
+* Checking duplicate records.
+* Reviewing invalid values and potential outliers.
+* Standardising inconsistent categorical values.
+* Preparing date and numerical fields.
+* Creating customer-level features for analysis and machine learning.
+
+4. Churn Definition
+
+The SQL churn analysis used a 180-day inactivity threshold at a snapshot date of 1 July 2026. Under this definition, a customer was classified as churned if they had been inactive beyond the 180-day threshold.
+
+The machine-learning workflow used historical customer behaviour to construct predictive features and future purchasing activity to define the target.
+
+The SQL analysis and machine-learning target use their respective observation windows and should not be assumed to have identical definitions.
+
+5. Machine-Learning Models
+
+The project explored five classification models:
+
+1. Logistic Regression
+2. Decision Tree
+3. Random Forest
+4. Gradient Boosting
+5. Neural Network (Multi-Layer Perceptron)
+
+Random Forest and Gradient Boosting were tuned using GridSearchCV with five-fold cross-validation.
+
+The recorded best Gradient Boosting parameters were:
+
+* Learning rate: 0.05
+* Maximum tree depth: 2
+* Minimum samples per leaf: 10
+* Number of estimators: 50
+* Best cross-validation F1-score: 0.735
+
+6. Model Evaluation
+
+The executed tuned Gradient Boosting evaluation cell in the Phase 9 notebook recorded the following held-out test results:
+
+Metric	Recorded result
+Accuracy	0.674 (67.4%)
+Precision	0.658 (65.8%)
+Recall	0.865 (86.5%)
+F1-score	0.748 (74.8%)
+ROC-AUC	0.709 (70.9%)
+
+These values were transcribed from the individual tuned Gradient Boosting evaluation and ROC-AUC outputs.
+
+Important evaluation note: The notebook’s later manually populated model-comparison table and some accompanying markdown descriptions contain different metric values. The final comparison should be reconciled by checking the executed model-evaluation cells before these figures are treated as the definitive comparison or used for operational decisions.
+
+The tuned Gradient Boosting model is presented as the selected model in this project draft, subject to confirmation after the comparison is corrected.
+
+7. Important Features
+
+The Random Forest feature-importance output identified the following leading features:
+
+Feature	Recorded importance
+Purchase frequency	0.3809
+Purchase recency	0.2191
+Monetary value	0.1418
+Customer age at cutoff	0.0591
+Average support-ticket resolution hours	0.0347
+
+The results suggest that purchasing behaviour is particularly informative when predicting churn.
+
+Feature importance describes how much a model relies on a feature. It does not establish that the feature causes customer churn.
+
+8. Project Structure
+
+The GitHub repository is organised into the following main folders and files:
+
+Meridian-Retail-Customer-Churn-Prediction/
 │
-├── 00 - Project Brief/
-├── 01 - Phase 1 Business Understanding/
-├── 02 - Phase 2 Data Understanding/
-├── 03 - Phase 3 Excel Analysis/
-├── 04 - Phase 4 SQL Analysis/
-├── 05 - Python Programming (Phases 2–6)/
-├── 06 - Phase 6 Data Cleaning/
-├── 07 - Phase 7 Exploratory Data Analysis/
-├── 08 - Phase 8 Data Visualisation/
-├── 09 - Phase 9 Machine Learning/
-│   └── 01 - API and Model Deliverables/
-├── 10 - Final Business Report/
+├── clean data/
 │
+├── Notebooks/
+│   ├── Phase 2–6
+│   ├── Phase 7 – Exploratory Data Analysis
+│   ├── Phase 8 – Visualisation
+│   └── Phase 9 – Machine Learning
+│
+├── Visualization/
+│
+├── deployment/
+│   ├── Meridian churn API.py
+│   ├── Meridian final churn model.pkl
+│   └── Meridian API Test Evidence.json
+│
+├── presentation/
+│
+├── Meridian retail excel workbook
+├── Final report
+├── Meridian retail SQL analysis
+├── SQL analysis in PDF
 ├── README.md
 └── requirements.txt
-11. How to Run the Project
-The Python notebooks can be opened and executed using Google Colab or Jupyter Notebook.
-The SQL analysis can be reviewed and executed using a compatible SQLite environment.
-The API application requires its Python dependencies and saved model file to be available in the appropriate project directory.
-Install the listed Python dependencies using:
-pip install -requirements.txt
-12. Conclusion
-This project demonstrates an end-to-end data science investigation into customer churn, from understanding and preparing retail data to analysing customer behaviour, building predictive models and developing an API for model testing.
-The findings provide a foundation for Meridian Retail Group to develop more informed customer-retention strategies.
 
+The folders contain the project’s cleaned data, analysis notebooks, visualisation outputs and deployment materials. The root directory also contains the supporting report, Excel workbook and SQL analysis.
+
+9. Saved Machine-Learning Model
+
+The saved model file is:
+
+Meridian final churn model.pkl
+
+The model is intended to include the preprocessing steps required to prepare customer information before predictions are generated.
+
+The saved model should be checked against the model-loading path used by the Flask API to ensure both files belong to the same implementation.
+
+10. Flask API
+
+The project includes a Flask API file:
+
+Meridian churn API.py
+
+The documented prediction endpoint is:
+
+POST /predict
+
+The API is intended to accept customer information in JSON format and return:
+
+* A churn prediction.
+* The probability of not churning.
+* The probability of churning.
+* A prediction interpretation.
+
+Example request
+
+The following is an illustrative request. The exact feature names and valid categories must match those expected by the API implementation.
+
+{
+  "recency": 30,
+  "frequency": 5,
+  "monetary": 5000,
+  "age_at_cutoff": 35,
+  "ticket_count": 2,
+  "avg_resolution_hours": 12,
+  "avg_satisfaction": 4,
+  "gender": "F",
+  "membership_tier": "Gold",
+  "preferred_channel": "Online",
+  "state": "Lagos",
+  "referral_source": "Social Media",
+  "marketing_opt_in": 1
+}
+
+Running the API
+
+Ensure Python, Flask and the machine-learning dependencies used by the project are installed.
+
+From the project directory, navigate into the deployment folder and run:
+
+cd deployment
+python "Meridian churn API.py"
+
+The application is documented to start on port 5000.
+
+For local testing, send a POST request to:
+
+http://127.0.0.1:5000/predict
+
+The API should return the prediction and probability scores as JSON.
+
+11. API Testing and Evidence
+
+The project testing summary reports three Flask test-client scenarios:
+
+1. Valid customer information — returned a churn prediction.
+2. Missing customer features — returned an HTTP 400 error.
+3. Invalid numerical input — returned an HTTP 400 error with an explanatory message.
+
+The reported evidence file is:
+
+Meridian API Test Evidence.json
+
+This file is included in the deployment materials. The API source file, saved model and test-evidence file should be checked together to ensure they correspond to the same implementation.
+
+12. Business Recommendations
+
+Meridian Retail Group should consider the following actions:
+
+* Monitor customers with declining purchase frequency.
+* Identify customers who have not purchased recently.
+* Develop targeted customer-retention campaigns.
+* Improve customer support and complaint resolution.
+* Review model performance regularly.
+* Evaluate retention-campaign outcomes using customer data.
+
+13. Model Limitations
+
+The model was trained using historical customer data. Changes in customer behaviour, market conditions and business activities may affect future predictions.
+
+Missing information and unequal representation of customer groups may also affect model performance.
+
+The project uses synthetic data, so the findings should not be interpreted as evidence of actual customer behaviour in a real retail business.
+
+The model should be monitored and updated as new customer data becomes available. Predictions should support business decisions rather than replace human judgement.
+
+Model performance should be reviewed on new data before the API is used for business-critical decisions.
+
+14. Conclusion
+
+This project demonstrates how data analysis, SQL, visualisation and machine learning can be applied to investigate and predict customer churn.
+
+The tuned Gradient Boosting evaluation recorded in the notebook provides a basis for identifying customers at risk of churning and supporting more informed customer-retention decisions.
+
+The Flask API is intended to make predictions accessible through a prediction endpoint.
+
+Before operational use, the final model comparison, saved-model/API consistency and API test evidence should be verified.
