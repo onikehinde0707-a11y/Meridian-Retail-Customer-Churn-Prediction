@@ -1,0 +1,38 @@
+{
+    "test_date": "2026-11-03T16:06:39.008045",
+    "valid_input_test": {
+        "status_code": 200,
+        "response": {
+            "churn_prediction": 1,
+            "probability_not_churning": 0.3194,
+            "probability_of_churning": 0.6806,
+            "result": "Likely to churn"
+        }
+    },
+    "missing_features_test": {
+        "status_code": 400,
+        "response": {
+            "error": "Missing required features",
+            "missing_features": [
+                "recency",
+                "monetary",
+                "age_at_cutoff",
+                "ticket_count",
+                "avg_resolution_hours",
+                "avg_satisfaction",
+                "gender",
+                "membership_tier",
+                "preferred_channel",
+                "state",
+                "referral_source",
+                "marketing_opt_in"
+            ]
+        }
+    },
+    "invalid_numerical_input_test": {
+        "status_code": 400,
+        "response": {
+            "error": "Invalid value: frequency must be a number."
+        }
+    }
+}
